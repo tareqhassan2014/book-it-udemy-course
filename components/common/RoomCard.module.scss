@@ -1,0 +1,31 @@
+.card {
+    &_image {
+        border-radius: 0.8rem;
+        height: 170px;
+        width: 100%;
+    }
+
+    &_title {
+        margin-bottom: 2rem;
+        & a {
+            text-decoration: none;
+            color: #000;
+
+            &:hover {
+                color: #e61e4d;
+            }
+        }
+    }
+
+    &_button {
+        background-color: #e61e4d;
+        border-radius: 0.8rem;
+        border: none;
+        padding: 0.5rem;
+
+        & a {
+            color: #fff;
+            text-decoration: none;
+        }
+    }
+}
