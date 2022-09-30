@@ -13,8 +13,16 @@ const getAllRooms = catchAsync(async (req, res, next) => {
         .limitFields()
         .paginate();
 
+    //get the number of documents in the collection
+    const roomsCount = await roomModel.countDocuments();
+
     const rooms = await apiFeatures.query;
-    res.status(200).json({ success: true, count: rooms.length, rooms });
+    res.status(200).json({
+        success: true,
+        results: rooms.length,
+        total: roomsCount,
+        rooms,
+    });
 });
 
 // create new room => /api/rooms

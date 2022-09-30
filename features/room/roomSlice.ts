@@ -2,14 +2,16 @@ import { createSlice } from '@reduxjs/toolkit';
 
 interface RoomState {
     rooms: Room[];
-    totalRooms: number;
+    total: number;
     error: string | null;
+    results: number;
 }
 
 const initialState = {
     rooms: [],
-    totalRooms: 0,
+    total: 0,
     error: null,
+    results: 0,
 } as RoomState;
 
 const roomSlice = createSlice({
@@ -18,7 +20,8 @@ const roomSlice = createSlice({
     reducers: {
         addRooms: (state, action) => {
             state.rooms = action.payload.rooms;
-            state.totalRooms = action.payload.count;
+            state.total = action.payload.total;
+            state.results = action.payload.results;
         },
     },
 });

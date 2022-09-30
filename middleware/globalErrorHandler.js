@@ -9,7 +9,11 @@ const handelCastErrorDB = (err) => {
 // handel duplicate error
 const handelDuplicateErrorDB = (err) => {
     const value = err.errmsg.match(/(["'])(\\?.)*?\1/)[0];
-    const message = `Duplicate field value: ${value}. Please use another value!`;
+    const message =
+        `Duplicate field value: ${value.trim()}. Please use another value!`.replace(
+            /['"]+/g,
+            ''
+        );
     return new AppError(message, 400);
 };
 

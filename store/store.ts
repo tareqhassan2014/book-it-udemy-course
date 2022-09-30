@@ -8,11 +8,15 @@ import {
 import { createWrapper, HYDRATE } from 'next-redux-wrapper';
 import { apiSlice } from '../features/api/apiSlice';
 import { counterReducer } from '../features/counter';
+import querySlice from '../features/query/querySlice';
 import roomSlice from '../features/room/roomSlice';
+import roomDetailsSlice from '../features/roomDetails/roomDetailsSlice';
 
 const combinedReducer = combineReducers({
     counter: counterReducer,
     rooms: roomSlice,
+    query: querySlice,
+    roomDetail: roomDetailsSlice,
     [apiSlice.reducerPath]: apiSlice.reducer,
 });
 
