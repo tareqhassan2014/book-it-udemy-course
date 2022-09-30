@@ -4,7 +4,7 @@ import { setQuery } from '../../features/query/querySlice';
 import { useGetRoomsQuery } from '../../features/room/roomApi';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import RoomCard from '../common/RoomCard';
-import styles from './Home.module.scss';
+import styles from './home.module.scss';
 
 const Home = () => {
     const dispatch = useAppDispatch();
